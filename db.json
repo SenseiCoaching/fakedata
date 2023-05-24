@@ -1,0 +1,104 @@
+{
+  "athletes": [
+    {
+        "id":1,
+        "firstname":"Shiba",
+        "name":"Inu",
+        "height":160,
+        "weight":65
+    },
+    {
+      "id":2,
+        "firstname":"Yakitori",
+        "name":"Henzo",
+        "height":172,
+        "weight":72
+    },
+    {
+      "id":3,
+        "firstname":"Taji",
+        "name":"Odate",
+        "height":182,
+        "weight":87
+    }
+  ],
+  "exercices": [
+    {
+      "id": 1,
+      "name": "pompes"
+    },
+    {
+      "id": 2,
+      "name": "biceps_curl"
+    },
+    {
+      "id": 3,
+      "name": "burpees"
+    }
+  ],
+  "programms":[
+    {
+        "id":1,
+        "name": "WOD 1",
+        "sections": [
+            {
+            "name": "Echauffement",
+            "exercices": [
+                {
+                "exerciceId": 1,
+                "repeat": "15",
+                "rest": "0"
+                },
+                {
+                "exerciceId": 2,
+                "repeat": "15",
+                "weight": "5",
+                "rest": "0"
+                },
+                {
+                "exerciceId": 3,
+                "timeValue": "120",
+                "rest": "10"
+                }
+            ]
+            },
+            {
+            "name": "Circuit",
+            "repeat": "4",
+            "endRepeatRest": "20",
+            "exercices": [
+                {
+                "exerciceId": 1,
+                "repeat": "15",
+                "rest": "10"
+                },
+                {
+                "exerciceId": 2,
+                "repeat": "15",
+                "weight": "5",
+                "rest": "10"
+                },
+                {
+                "exerciceId": 3,
+                "timeValue": "120",
+                "rest": "10"
+                }
+            ]
+            },
+            {
+            "name": "FINISH",
+            "exercices": [
+                {
+                "exerciceId": 1,
+                "repeat": "100",
+                "rest": "0"
+                }
+            ]
+            }
+        ]
+    }
+],
+  "profile": {
+    "name": "typicode"
+  }
+}
