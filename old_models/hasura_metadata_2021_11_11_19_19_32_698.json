@@ -1,0 +1,161 @@
+{
+  "resource_version": 41,
+  "metadata": {
+    "version": 3,
+    "sources": [
+      {
+        "name": "default",
+        "kind": "postgres",
+        "tables": [
+          {
+            "table": {
+              "schema": "public",
+              "name": "athletes"
+            },
+            "array_relationships": [
+              {
+                "name": "athletes_workouts",
+                "using": {
+                  "foreign_key_constraint_on": {
+                    "column": "id_adherent",
+                    "table": {
+                      "schema": "public",
+                      "name": "athletes_workout"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "table": {
+              "schema": "public",
+              "name": "athletes_workout"
+            },
+            "object_relationships": [
+              {
+                "name": "athlete",
+                "using": {
+                  "foreign_key_constraint_on": "id_adherent"
+                }
+              },
+              {
+                "name": "workout",
+                "using": {
+                  "foreign_key_constraint_on": "id_workout"
+                }
+              }
+            ]
+          },
+          {
+            "table": {
+              "schema": "public",
+              "name": "exercices"
+            },
+            "array_relationships": [
+              {
+                "name": "sections",
+                "using": {
+                  "foreign_key_constraint_on": {
+                    "column": "id_exercice",
+                    "table": {
+                      "schema": "public",
+                      "name": "exercices_sections"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "table": {
+              "schema": "public",
+              "name": "exercices_sections"
+            },
+            "object_relationships": [
+              {
+                "name": "exercice",
+                "using": {
+                  "foreign_key_constraint_on": "id_exercice"
+                }
+              },
+              {
+                "name": "section",
+                "using": {
+                  "foreign_key_constraint_on": "id_section"
+                }
+              }
+            ]
+          },
+          {
+            "table": {
+              "schema": "public",
+              "name": "sections"
+            },
+            "object_relationships": [
+              {
+                "name": "workout",
+                "using": {
+                  "foreign_key_constraint_on": "id_training"
+                }
+              }
+            ],
+            "array_relationships": [
+              {
+                "name": "exercices",
+                "using": {
+                  "foreign_key_constraint_on": {
+                    "column": "id_section",
+                    "table": {
+                      "schema": "public",
+                      "name": "exercices_sections"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "table": {
+              "schema": "public",
+              "name": "workouts"
+            },
+            "array_relationships": [
+              {
+                "name": "athletes_workouts",
+                "using": {
+                  "foreign_key_constraint_on": {
+                    "column": "id_workout",
+                    "table": {
+                      "schema": "public",
+                      "name": "athletes_workout"
+                    }
+                  }
+                }
+              },
+              {
+                "name": "sections",
+                "using": {
+                  "foreign_key_constraint_on": {
+                    "column": "id_training",
+                    "table": {
+                      "schema": "public",
+                      "name": "sections"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "configuration": {
+          "connection_info": {
+            "use_prepared_statements": false,
+            "database_url": "postgres://postgres:postgrespassword@postgres:5432/postgres",
+            "isolation_level": "read-committed"
+          }
+        }
+      }
+    ]
+  }
+}
